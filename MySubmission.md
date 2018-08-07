@@ -21,6 +21,7 @@ library(corrplot)
 Then, it's time to download the data from the source:
 
 urltrain <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+
 urltest  <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
 pmltraining <- read.csv(url(urltrain))
 pmltesting  <- read.csv(url(urltest))
@@ -42,6 +43,7 @@ training <- pmltraining[inTrain, ]
 testing  <- pmltraining[-inTrain, ]
 
 Finally, I will check if I can reduce any feature more by checking correlation:
+
 
 
 Thus, I have a dataset ready for testing
