@@ -8,9 +8,10 @@ library(rpart.plot)
 library(corrplot)
 
 # Obtain the data
-setwd("MLearning")
-pmltraining <- read.csv("pml-training.csv")
-pmltesting <- read.csv("pml-testing.csv")
+urltrain <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+urltest  <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+pmltraining <- read.csv(url(urltrain))
+pmltesting  <- read.csv(url(urltest))
 
 # Data cleaning: use only numeric columns with no empty/NA values
 pmltraining <- pmltraining[,-(1:6)]
