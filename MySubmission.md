@@ -34,7 +34,9 @@ With this, I have reduced the dataset to 54 features.
 Finally, I will check if I can reduce any feature more by checking correlation:
 corMatrix <- cor(training[, -54])
 corrplot(corMatrix, order = "FPC", method = "color", type = "lower", tl.cex = 0.8, tl.col = rgb(0, 0, 0))
- 
+
+![image](https://user-images.githubusercontent.com/39746052/43812362-42c0b5b0-9ac1-11e8-992f-f3cd622b3bda.png)
+
 The darkest colours indicate higher correlation. As correlations are quite few, I consider it is not necessary to perform a PCA (Principal Components Analysis).
 Once I have a valid dataset, I create a partition of the pmltraining dataset, one for training (70%) and one for testing (30%) the models:
 inTrain  <- createDataPartition(pmltraining$classe, p=0.7, list=FALSE)
